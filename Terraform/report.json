@@ -1,0 +1,50 @@
+[
+ {
+  "RuleID": "terraform-admin-password",
+  "Description": "Detect Terraform admin_password variable",
+  "StartLine": 70,
+  "EndLine": 70,
+  "StartColumn": 6,
+  "EndColumn": 36,
+  "Match": "admin_password = \"Hesoyam45678\"",
+  "Secret": "admin_password = \"Hesoyam45678\"",
+  "File": "C:/DEVOPS INSIDER/codesamples/TERRAFORM/15.TERRAFORMDATABLOC2/Terraform/Environments/terraform.tfvars",
+  "SymlinkFile": "",
+  "Commit": "",
+  "Entropy": 4.3248487,
+  "Author": "",
+  "Email": "",
+  "Date": "",
+  "Message": "",
+  "Tags": [
+   "terraform",
+   "password",
+   "secret"
+  ],
+  "Fingerprint": "C:/DEVOPS INSIDER/codesamples/TERRAFORM/15.TERRAFORMDATABLOC2/Terraform/Environments/terraform.tfvars:terraform-admin-password:70"
+ },
+ {
+  "RuleID": "terraform-admin-password",
+  "Description": "Detect Terraform admin_password variable",
+  "StartLine": 79,
+  "EndLine": 79,
+  "StartColumn": 5,
+  "EndColumn": 49,
+  "Match": "admin_password = \"ghp_uIu9Y8LzQ7aBc123456789\"",
+  "Secret": "admin_password = \"ghp_uIu9Y8LzQ7aBc123456789\"",
+  "File": "C:/DEVOPS INSIDER/codesamples/TERRAFORM/15.TERRAFORMDATABLOC2/Terraform/Environments/terraform.tfvars",
+  "SymlinkFile": "",
+  "Commit": "",
+  "Entropy": 4.9417443,
+  "Author": "",
+  "Email": "",
+  "Date": "",
+  "Message": "",
+  "Tags": [
+   "terraform",
+   "password",
+   "secret"
+  ],
+  "Fingerprint": "C:/DEVOPS INSIDER/codesamples/TERRAFORM/15.TERRAFORMDATABLOC2/Terraform/Environments/terraform.tfvars:terraform-admin-password:79"
+ }
+]
