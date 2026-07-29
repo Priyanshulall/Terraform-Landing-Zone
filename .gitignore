@@ -9,7 +9,21 @@
 crash.log
 crash.*.log
 
+infracost2.report.json
+nfracost3.report.json
 
+# TERRAFORM GITLEAKS
+report.json
+priyanshu .txt
+
+# TERRAFORM TFLINT
+tflint-report.json
+
+# TERRAFORM TFSEC
+tfsec-report.json
+
+# TERRAFORM LOCK 
+.terraform.lock.hcl
 # Ignore override files as they are usually used to override resources locally and so
 # are not checked in
 override.tf
@@ -30,21 +44,6 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# TERRAFORM INFRACOST
-infracost2.report.json
-nfracost3.report.json
-
-# TERRAFORM GITLEAKS
-report.json
-
-# TERRAFORM TFLINT
-tflint-report.json
-
-# TERRAFORM TFSEC
-tfsec-report.json
-
-# TERRAFORM LOCK 
-.terraform.lock.hcl
 
 
 
