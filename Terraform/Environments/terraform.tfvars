@@ -1,6 +1,6 @@
 res = {
   rg={
-    name="priyanshu-rg"
+    name="priyanshu-rg-dev"
     loc ="eastus2"
   }
 }
