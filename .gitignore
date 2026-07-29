@@ -11,6 +11,7 @@ crash.*.log
 
 infracost2.report.json
 nfracost3.report.json
+infracost-report.html
 
 # TERRAFORM GITLEAKS
 report.json
