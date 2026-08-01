@@ -24,7 +24,10 @@ resource "azurerm_linux_virtual_machine" "virtual_machine" {
   network_interface_ids = [
     azurerm_network_interface.nic[each.key].id,
   ]
-
+tags = {
+    Environment =  "Dev"
+    Service     =  "VirtualMachine"
+  } 
 
   os_disk {
     caching              = "ReadWrite"

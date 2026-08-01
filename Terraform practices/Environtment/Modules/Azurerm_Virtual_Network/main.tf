@@ -4,5 +4,10 @@ resource "azurerm_virtual_network" "vnet" {
     location            = each.value.loc
     resource_group_name = each.value.rg
     address_space       = each.value.address
+        
+    tags = {
+      Environment =  "Dev"
+      Service     =  "VirtualNetwork"
+    }
 
 }
