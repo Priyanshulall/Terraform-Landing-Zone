@@ -45,5 +45,9 @@ resource "azurerm_key_vault_secret" "secret" {
   name         = each.value.secret_name
   value        = "Hesoyam45678"
   key_vault_id = azurerm_key_vault.keys[each.key].id
+  tags = {
+    Environment = "Dev"
+    Service     = "KeyVaultSecret"  
+  }
 
 }

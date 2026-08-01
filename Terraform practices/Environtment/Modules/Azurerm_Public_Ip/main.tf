@@ -4,5 +4,9 @@ resource "azurerm_public_ip" "pip" {
     location            = each.value.loc
     resource_group_name = each.value.rg
     allocation_method   = each.value.allocation
+    tags = {
+      Environment =  "Dev"
+      Service     =  "PublicIP"
+    }   
   
 }
