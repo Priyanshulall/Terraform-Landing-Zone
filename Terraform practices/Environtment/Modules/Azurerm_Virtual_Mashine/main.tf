@@ -3,6 +3,10 @@ resource "azurerm_network_interface" "nic" {
   name                = each.value.nic_name
   location            = each.value.loc
   resource_group_name = each.value.rg
+  tags = {
+    Environment =  "Dev"
+    Service     =  "NetworkInterface"
+  }
 
   ip_configuration {
     name                          = "ipconfig1"
