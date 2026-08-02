@@ -19,8 +19,11 @@ resource "azurerm_key_vault" "keys" {
 
 
   tags = {
-    Environment = "Dev"
-    Service     = "KeyVault"
+    Environment = each.value.env
+    Service     = each.value.service
+  }
+  lifecycle{
+    prevent_destroy = true
   }
 
   access_policy {
@@ -46,8 +49,11 @@ resource "azurerm_key_vault_secret" "secret" {
   value        = "Hesoyam45678"
   key_vault_id = azurerm_key_vault.keys[each.key].id
   tags = {
-    Environment = "Dev"
-    Service     = "KeyVaultSecret"  
+    Environment = each.value.env
+    Service     = each.value.service
   }
-
+  lifecycle{
+    prevent_destroy = true
+  }
+        
 }

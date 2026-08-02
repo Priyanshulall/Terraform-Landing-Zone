@@ -1,6 +1,7 @@
 module "resources" {
     source = "../Modules/Azurerm_Resource_Group"
     resource_groups = var.resource_groups
+
 }
 module "vnet" {
     depends_on = [ module.resources ]

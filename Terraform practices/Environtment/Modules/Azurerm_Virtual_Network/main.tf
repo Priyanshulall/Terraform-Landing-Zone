@@ -6,8 +6,8 @@ resource "azurerm_virtual_network" "vnet" {
     address_space       = each.value.address
         
     tags = {
-      Environment =  "Dev"
-      Service     =  "VirtualNetwork"
+      Environment =  each.value.env
+      Service     =  each.value.service
     }
 
 }
