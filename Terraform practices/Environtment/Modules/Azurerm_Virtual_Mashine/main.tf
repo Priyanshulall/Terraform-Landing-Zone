@@ -4,8 +4,8 @@ resource "azurerm_network_interface" "nic" {
   location            = each.value.loc
   resource_group_name = each.value.rg
   tags = {
-    Environment =  "Dev"
-    Service     =  "NetworkInterface"
+    Environment =  each.value.env
+    Service     =  each.value.service
   }
 
   ip_configuration {
@@ -13,6 +13,10 @@ resource "azurerm_network_interface" "nic" {
     subnet_id                     = data.azurerm_subnet.subnet[each.key].id
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = data.azurerm_public_ip.pip[each.key].id
+  }
+  lifecycle {
+    create_before_destroy = true
+    replace_triggered_by = [  ]
   }
 }
 resource "azurerm_linux_virtual_machine" "virtual_machine" {
@@ -29,15 +33,21 @@ resource "azurerm_linux_virtual_machine" "virtual_machine" {
     azurerm_network_interface.nic[each.key].id,
   ]
 tags = {
-    Environment =  "Dev"
-    Service     =  "VirtualMachine"
+    Environment =  each.value.env
+    Service     =  each.value.service
   } 
+
+  lifecycle {
+    create_before_destroy = true
+  }
+
+    custom_data = base64encode(file("${path.module}/scripts/custom-data.sh"))
 
   os_disk {
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
   }
-  custom_data = base64encode(file("${path.module}/scripts/custom-data.sh"))
+
 
   source_image_reference {
     publisher = "Canonical"

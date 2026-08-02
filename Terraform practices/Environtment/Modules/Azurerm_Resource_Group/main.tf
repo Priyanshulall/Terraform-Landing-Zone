@@ -4,7 +4,10 @@ resource "azurerm_resource_group" "rg" {
     location = each.value.loc
     
     tags = {
-      Environment =  "Dev"
-      Service     =  "ResourceGroup"
+      Environment =  each.value.env
+      Service     =  each.value.service
+    }
+    lifecycle {
+       prevent_destroy = true
     }
 }

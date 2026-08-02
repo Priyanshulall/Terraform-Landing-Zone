@@ -2,6 +2,8 @@ resource_groups = {
   rg1 ={
     name = "priyanshu-rg"
     loc ="eastus"
+    env = "Dev"
+    service = "ResourceGroup"
   }
 }
 virtual_networks = {
@@ -10,6 +12,8 @@ virtual_networks = {
     loc ="eastus"
     rg  = "priyanshu-rg"
     address = ["10.0.0.0/16"]
+    env = "Dev"
+    service = "VirtualNetwork"  
   }
 }
 subnets = {
@@ -18,6 +22,7 @@ subnets = {
     rg = "priyanshu-rg"
     vnet = "priyanshu-vnet" 
     address = ["10.0.1.0/24"]
+  
   }
   sub2={
     name ="Backend-subnet"
@@ -32,12 +37,16 @@ public_ips = {
     loc ="eastus"
     rg  = "priyanshu-rg"
     allocation = "Static"
+    env = "Dev"
+    service = "PublicIP"
   }
   pip2={
     name = "priyanshu-pip2"
     loc ="eastus"
     rg  = "priyanshu-rg"
     allocation = "Static"
+    env = "Dev"
+    service = "PublicIP"
   }
 }
 key_vaults = {
@@ -46,6 +55,8 @@ key_vaults = {
     loc ="eastus"
     rg  = "priyanshu-rg"
     secret_name = "admin-password"
+    env = "Dev"
+    service = "KeyVault"
   }
 }
 VMs = {
@@ -61,6 +72,8 @@ VMs = {
     kv_name = "priyanshu-kv"
     admin_username = "priyanshu"
     kvsecret_name = "admin-password"
+    env = "Dev"
+    service = "VirtualMachine"
   }
   vm2 ={
     name = "priyanshu-vm2"
@@ -74,5 +87,7 @@ VMs = {
     kv_name = "priyanshu-kv"
     admin_username = "priyanshu"
     kvsecret_name = "admin-password"
+    env = "Dev"
+    service = "VirtualMachine"
   }
 }
